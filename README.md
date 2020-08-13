@@ -6,7 +6,8 @@
 
 
 ## Roadmap:-
-- [x] Project Started
+- [x] Project Started 
+- [x] Changing Code from an app inventor component to an extension      
 - [ ] To Compile It As An Extention To Use
 - [ ] Testing
 - [ ] Make Compilable With Kodular
