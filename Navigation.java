@@ -47,7 +47,7 @@ import org.osmdroid.util.GeoPoint;
     category = ComponentCategory.EXTENSION,
     description = "Navigation",
     nonVisible = true,
-    iconName = "https://speedtest.net.in/news/wp-content/uploads/2016/03/navigation.jpg")
+    iconName = "https://i.imgur.com/uxlvdZ7.png")
 @UsesPermissions(permissionNames = "android.permission.INTERNET")
 @UsesLibraries({"osmdroid.jar"})
 @SimpleObject
