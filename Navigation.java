@@ -3,6 +3,7 @@
 // Released under the Apache License, Version 2.0
 // http://www.apache.org/licenses/LICENSE-2.0
 
+package com.kode.navigation;
 import static com.google.appinventor.components.runtime.util.GeometryUtil.isValidLatitude;
 import static com.google.appinventor.components.runtime.util.GeometryUtil.isValidLongitude;
 import static com.google.appinventor.components.runtime.util.YailDictionary.ALL;
