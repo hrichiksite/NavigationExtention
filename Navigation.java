@@ -50,8 +50,7 @@ import org.osmdroid.util.GeoPoint;
 @UsesPermissions(permissionNames = "android.permission.INTERNET")
 @UsesLibraries({"osmdroid.jar"})
 @SimpleObject
-public class Navigation extends AndroidNonvisibleComponent implements Component {
-
+public class Navigation extends AndroidNonvisibleComponent  {
   private static final String TAG = "Navigation";
 
   public static final String OPEN_ROUTE_SERVICE_URL =
