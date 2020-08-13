@@ -7,7 +7,7 @@
 
 ## Roadmap:-
 - [x] Project Started
-- [ ] Supported To Compile It As A Extention To Use
+- [ ] To Compile It As An Extention To Use
 - [ ] Testing
 - [ ] Make Compilable With Kodular
 - [ ] Supported
@@ -15,3 +15,4 @@
 ### Contributors are Welcome. :smile:
 
 ##### Note: This is not currently compilable as I don't know much about JAVA, but soon it will be with the help of others. 
+##### This Source Is Incompatible with AppyBuilder Code Editor IDE. As this Extention needs external libreries (.jar)
