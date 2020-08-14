@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="all.css">
+    <link href="all.css" rel="stylesheet">
+
+    <style>
+         .jumbotron {
+  padding: $jumbotron-padding ($jumbotron-padding / 2);
+  margin-bottom: $jumbotron-padding;
+  background-color: $jumbotron-bg;
+  @include border-radius($border-radius-lg);
+
+  @include media-breakpoint-up(sm) {
+    padding: ($jumbotron-padding * 2) $jumbotron-padding;
+  }
+}
+.jumbotron-fluid {
+  padding-right: 0;
+  padding-left: 0;
+  @include border-radius(0);
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffffff; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+#forkongithub a{background:#000;color:#fff;text-decoration:none;font-family:arial,sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:1rem;line-height:2rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#c11;color:#fff;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:800px){#forkongithub{position:fixed;display:block;top:0;right:0;width:200px;overflow:hidden;height:200px;z-index:9999;}#forkongithub a{width:200px;position:absolute;top:60px;right:-60px;transform:rotate(45deg);-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.8);}}</style><span id="forkongithub"><a href="https://github.com/hrichiksite/NavigationExtention">Fork me on GitHub</a></span>
+    </style>
+
+    <title>Navigation Extension Docs</title>
+    </head>
+<body  style="background-color:rgb(200, 224, 59);"><nav class="navbar navbar-expand-xl navbar-light">
+    <h2 id="Navigation">Navigation Extension Docs</h2>
+
+<p>The Navigation Extension generates directions between two locations using a service called
+ <a href="https://openrouteservice.org">OpenRouteService</a>. You must provide a valid API key from that
+ service in order for this Extension to work.</p>
+
+<h3 id="Navigation-Properties">Properties</h3>
+
+<dl class="properties">
+  <dt id="Navigation.ApiKey" class="text wo"><em>ApiKey</em></dt>
+  <dd>API Key for Open Route Service. Obtain an API key at
+ <a href="https://openrouteservice.org">https://openrouteservice.org</a>.</dd>
+  <dt id="Navigation.EndLatitude" class="number"><em>EndLatitude</em></dt>
+  <dd>The latitude of the end location.</dd>
+  <dt id="Navigation.EndLocation" class="component wo bo"><em>EndLocation</em></dt>
+  <dd>Set the end location.</dd>
+  <dt id="Navigation.EndLongitude" class="number"><em>EndLongitude</em></dt>
+  <dd>The longitude of the end location.</dd>
+  <dt id="Navigation.Language" class="text"><em>Language</em></dt>
+  <dd>Property for Language</dd>
+  <dt id="Navigation.ResponseContent" class="dictionary ro bo"><em>ResponseContent</em></dt>
+  <dd>The raw response from the server. This can be used to access more details beyond what the
+ <a href="#Navigation.GotDirections"><code class="highlighter-rouge">GotDirections</code></a> event provides.</dd>
+  <dt id="Navigation.StartLatitude" class="number"><em>StartLatitude</em></dt>
+  <dd>The latitude of the start location.</dd>
+  <dt id="Navigation.StartLocation" class="component wo bo"><em>StartLocation</em></dt>
+  <dd>Set the start location.</dd>
+  <dt id="Navigation.StartLongitude" class="number"><em>StartLongitude</em></dt>
+  <dd>The longitude of the start location.</dd>
+  <dt id="Navigation.TransportationMethod" class="text"><em>TransportationMethod</em></dt>
+  <dd>The transportation method used for determining the route. Valid options are:
+
+    <ul>
+      <li><code class="highlighter-rouge">foot-walking</code>: Route based on walking paths</li>
+      <li><code class="highlighter-rouge">driving-car</code>: Route based on vehicle paths</li>
+      <li><code class="highlighter-rouge">cycling-regular</code>: Route based on bicycle paths</li>
+      <li><code class="highlighter-rouge">wheelchair</code>: Route based on wheelchair accessible paths</li>
+    </ul>
+  </dd>
+</dl>
+
+<h3 id="Navigation-Events">Events</h3>
+
+<dl class="events">
+  <dt id="Navigation.GotDirections">GotDirections(<em class="list">directions</em>,<em class="list">points</em>,<em class="number">distance</em>,<em class="number">duration</em>)</dt>
+  <dd>Event indicating that a request has finished and has returned data. The following parameters
+ are provided:
+
+    <ul>
+      <li><code class="highlighter-rouge">directions</code>: A list of text directions, such as “Turn left at Massachusetts Avenue”.</li>
+      <li><code class="highlighter-rouge">points</code>: A list of (latitude, longitude) points that represent the path to take. This can
+be passed to <a href="https://docs.kodular.io/components/maps/line-string/#points-from-string"><code class="highlighter-rouge">LineString</code>’s <code class="highlighter-rouge">Points</code></a> to draw the line on a <a href="https://docs.kodular.io/components/maps/map/"><code class="highlighter-rouge">Map</code></a>.</li>
+      <li><code class="highlighter-rouge">distance</code>: Estimated distance for the route, in meters.</li>
+      <li><code class="highlighter-rouge">duration</code>: Estimated duration for the route, in seconds.</li>
+    </ul>
+  </dd>
+</dl>
+
+<h3 id="Navigation-Methods">Methods</h3>
+
+<dl class="methods">
+  <dt id="Navigation.RequestDirections" class="method"><i></i> RequestDirections()</dt>
+  <dd>Request directions from the routing service using the values of <a href="#Navigation.StartLatitude"><code class="highlighter-rouge">StartLatitude</code></a>,
+ <a href="#Navigation.StartLongitude"><code class="highlighter-rouge">StartLongitude</code></a>, <a href="#Navigation.EndLatitude"><code class="highlighter-rouge">EndLatitude</code></a>, and <a href="#Navigation.EndLongitude"><code class="highlighter-rouge">EndLongitude</code></a>. On success,
+ the <a href="#Navigation.GotDirections"><code class="highlighter-rouge">GotDirections</code></a> event block will run. If an
+ error occurs, the error will be reported via the
+ <a href="https://docs.kodular.io/components/screen/#error-occurred"><code class="highlighter-rouge">Screen's ErrorOccurred</code></a> event.</dd>
+</dl>
+
+<script async src="http://ai2.appinventor.mit.edu/static/js/widgets.js" charset="utf-8"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+</div>
+    </body>
+</html>
