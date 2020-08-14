@@ -11,6 +11,7 @@
 - [x] Changing Code from an app inventor component to an extension      
 - [x] To Compile It As An Extension To Use
 - [x] Created The [Documentation](https://hrichiksite.github.io/NavigationExtention/docs/)
+- [x] Uploaded AIX Extension File
 - [ ] Testing
 - [ ] Make Compilable With Kodular
 - [ ] Supported
