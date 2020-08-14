@@ -12,9 +12,9 @@
 - [x] To Compile It As An Extension To Use
 - [x] Created The [Documentation](https://hrichiksite.github.io/NavigationExtention/docs/)
 - [x] Uploaded AIX Extension File
-- [ ] Testing
-- [ ] Make Compilable With Kodular
-- [ ] Supported
+- [x] Testing
+- [x] Make Compilable With Kodular
+- [x] Supported
 
 ### Contributors are Welcome. :smile:
 
